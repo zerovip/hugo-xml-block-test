@@ -1,0 +1,19 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>{{ .Site.Title }}</title>
+        <link>{{ .Permalink }}</link>
+        <description>
+            recent post of {{ .Site.Title }}
+        </description>
+
+        {{ range .Site.RegularPages }}
+            <item>
+                <title>{{ .Title }}</title>
+                <link>{{ .Permalink }}</link>
+                <pubDate>{{ .Date.Format "2006-01-02" | safeHTML }}</pubDate>
+                <description>{{ .Content | html }}</description>
+            </item>
+        {{ end }}
+    </channel>
+</rss> 

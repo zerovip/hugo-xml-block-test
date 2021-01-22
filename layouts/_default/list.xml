@@ -1,0 +1,24 @@
+{{ define "rss_title" }}
+    {{ $currentNode := . }}
+    {{ range .Site.Menus.main }}
+        {{ if ($currentNode.IsMenuCurrent "main" .) }}
+            {{ .Name }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ define "rss_main" }}
+    {{ $currentNode := . }}
+    {{ range .Site.Menus.main }}
+        {{ if ($currentNode.IsMenuCurrent "main" .) }}
+            {{ range where (where $currentNode.Site.Pages "Section" (path.Base .URL)) "Title" "ne" "" }}
+                <item>
+                    <title>{{ .Title }}</title>
+                    <link>{{ .Permalink }}</link>
+                    <pubDate>{{ .Date.Format "2006-01-02" | safeHTML }}</pubDate>
+                    <description>{{ .Content | html }}</description>
+                </item>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}

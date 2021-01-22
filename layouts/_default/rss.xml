@@ -1,0 +1,12 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>{{ block "rss_title" . }}{{ end }} | {{ .Site.Title }}</title>
+        <link>{{ .Permalink }}</link>
+        <description>
+            {{ i18n "recent_content" }} | {{ block "rss_title" . }}{{ end }} | {{ .Site.Title }}
+        </description>
+
+        {{ block "rss_main" . }}{{ end }}
+    </channel>
+</rss> 

@@ -1,0 +1,12 @@
+languageCode: en-us
+title: A test for hugo, block in xml
+disableKinds:
+- taxonomy
+- taxonomyTerm
+metaDataFormat: yaml
+menu:
+  main:
+    - url: /folder-1/
+      name: the first folder
+    - url: /folder-2/
+      identifier: the second folder
