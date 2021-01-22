@@ -4,7 +4,7 @@
         <title>{{ block "rss_title" . }}{{ end }} | {{ .Site.Title }}</title>
         <link>{{ .Permalink }}</link>
         <description>
-            {{ i18n "recent_content" }} | {{ block "rss_title" . }}{{ end }} | {{ .Site.Title }}
+            recent posts of {{ block "rss_title" . }}{{ end }} of {{ .Site.Title }}
         </description>
 
         {{ block "rss_main" . }}{{ end }}

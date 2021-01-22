@@ -7,6 +7,6 @@ metaDataFormat: yaml
 menu:
   main:
     - url: /folder-1/
-      name: the first folder
+      name: 'the first folder'
     - url: /folder-2/
-      identifier: the second folder
+      identifier: 'the second folder'

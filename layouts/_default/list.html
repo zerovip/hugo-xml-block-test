@@ -1,0 +1,8 @@
+{{ $currentNode := . }}
+{{ range .Site.Menus.main }}
+    {{ if ($currentNode.IsMenuCurrent "main" .) }}
+        {{ range where (where $currentNode.Site.Pages "Section" (path.Base .URL)) "Title" "ne" "" }}
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ end }}
+    {{ end }}
+{{ end }}
