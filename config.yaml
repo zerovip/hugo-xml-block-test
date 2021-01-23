@@ -9,4 +9,4 @@ menu:
     - url: /folder-1/
       name: 'the first folder'
     - url: /folder-2/
-      identifier: 'the second folder'
+      name: 'the second folder'
